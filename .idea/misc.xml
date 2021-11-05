@@ -5,8 +5,11 @@
       <map>
         <entry key="..\:/Users/MH050/AndroidStudioProjects/BookList/app/src/main/res/layout/activity_book_list_main.xml" value="0.1" />
         <entry key="..\:/Users/MH050/AndroidStudioProjects/BookList/app/src/main/res/layout/activity_book_list_main2.xml" value="0.15520833333333334" />
+        <entry key="..\:/Users/MH050/AndroidStudioProjects/BookList/app/src/main/res/layout/activity_edit_book.xml" value="0.22696629213483147" />
         <entry key="..\:/Users/MH050/AndroidStudioProjects/BookList/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/MH050/AndroidStudioProjects/BookList/app/src/main/res/layout/book_item_holder.xml" value="0.15520833333333334" />
+        <entry key="..\:/Users/MH050/AndroidStudioProjects/BookList/app/src/main/res/layout/book_item_holder.xml" value="0.1" />
+        <entry key="..\:/Users/MH050/AndroidStudioProjects/BookList/app/src/main/res/layout/dialogue_input_item.xml" value="0.1" />
+        <entry key="..\:/Users/MH050/AndroidStudioProjects/BookList/app/src/main/res/layout/input_item.xml" value="0.1" />
       </map>
     </option>
   </component>

@@ -10,8 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookList">
         <activity
-            android:name=".MainActivity$BookListMainActivity"
+            android:name=".EditBookActivity"
             android:exported="false" />
+        <activity
+            android:name=".BookListMainActivity"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
