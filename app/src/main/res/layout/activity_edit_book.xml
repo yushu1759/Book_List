@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EditBookActivity"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -18,16 +16,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Name" />
+            android:text="@string/string_name" />
 
         <EditText
+            android:inputType="text"
             android:id="@+id/edit_text_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:autofillHints="name"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="N" />
+             />
     </LinearLayout>
 
 
@@ -41,7 +40,7 @@
             android:id="@+id/button_ok"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="OK" />
+            android:text="@string/String_ok" />
     </LinearLayout>
 
 </LinearLayout>

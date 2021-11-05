@@ -30,7 +30,7 @@ public class BookListMainActivity extends AppCompatActivity {
     public static final int REQUEST_CODE_ADD = 123;
     public static final int REQUEST_CODE_EDIT = REQUEST_CODE_ADD+1;
     private List<BookItem> bookItems;
-    private MyRecyclerViewAdapter recyclerViewadapter;
+    private MyRecyclerViewAdapter recyclerViewAdapter;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -41,7 +41,7 @@ public class BookListMainActivity extends AppCompatActivity {
                 String name=data.getStringExtra("name");
                 int position=data.getIntExtra("position",bookItems.size());
                 bookItems.add(position,new BookItem(name,R.drawable.book_no_name));
-                recyclerViewadapter.notifyItemInserted(position);
+                recyclerViewAdapter.notifyItemInserted(position);
             }
         }
         if(requestCode==REQUEST_CODE_EDIT) {
@@ -49,8 +49,7 @@ public class BookListMainActivity extends AppCompatActivity {
                 String name = data.getStringExtra("name");
                 int position = data.getIntExtra("position", bookItems.size());
                 bookItems.get(position).setName(name);
-                bookItems.add(position, new BookItem(name, R.drawable.book_no_name));
-                recyclerViewadapter.notifyItemChanged(position);
+                recyclerViewAdapter.notifyItemChanged(position);
             }
         }
 
@@ -66,8 +65,8 @@ public class BookListMainActivity extends AppCompatActivity {
         RecyclerView mainRecyclerView = findViewById(R.id.recycle_view_books);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mainRecyclerView.setLayoutManager(layoutManager);
-        recyclerViewadapter = new MyRecyclerViewAdapter(bookItems);
-        mainRecyclerView.setAdapter(recyclerViewadapter);
+        recyclerViewAdapter = new MyRecyclerViewAdapter(bookItems);
+        mainRecyclerView.setAdapter(recyclerViewAdapter);
     }
 
     public void initData() {
@@ -158,8 +157,6 @@ public class BookListMainActivity extends AppCompatActivity {
                         intent=new Intent(BookListMainActivity.this,EditBookActivity.class);
                         intent.putExtra("position",position);
                         BookListMainActivity.this.startActivityForResult(intent, REQUEST_CODE_ADD);
-
-
                         break;
                     case CONTEXT_MENU_ID_UPDATE:
                         intent=new Intent(BookListMainActivity.this,EditBookActivity.class);
