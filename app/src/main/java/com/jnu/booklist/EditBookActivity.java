@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import java.io.ObjectOutputStream;
-
 public class EditBookActivity extends AppCompatActivity {
 
     @Override
@@ -26,14 +24,22 @@ public class EditBookActivity extends AppCompatActivity {
             editTextName.setText(name);
         }
 
-        Button buttonOk=this.findViewById(R.id.button_ok);
-        buttonOk.setOnClickListener(new View.OnClickListener() {
+        Button buttonConfirm=this.findViewById(R.id.button_confirm);
+        buttonConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent();
                 intent.putExtra("position",position);
                 intent.putExtra("name",editTextName.getText().toString());
                 setResult(BookListMainActivity.RESULT_CODE_ADD_DATA,intent);
+                EditBookActivity.this.finish();
+            }
+        });
+
+        Button buttonCancel=this.findViewById(R.id.button_cancel);
+        buttonCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 EditBookActivity.this.finish();
             }
         });
