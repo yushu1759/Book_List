@@ -25,23 +25,17 @@ public class EditBookActivity extends AppCompatActivity {
         }
 
         Button buttonConfirm=this.findViewById(R.id.button_confirm);
-        buttonConfirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent();
-                intent.putExtra("position",position);
-                intent.putExtra("name",editTextName.getText().toString());
-                setResult(BookListMainActivity.RESULT_CODE_ADD_DATA,intent);
-                EditBookActivity.this.finish();
-            }
+        buttonConfirm.setOnClickListener(view -> {
+            Intent intent1 =new Intent();
+            intent1.putExtra("position",position);
+            intent1.putExtra("name",editTextName.getText().toString());
+            setResult(BookListFragment.RESULT_CODE_ADD_DATA, intent1);
+            EditBookActivity.this.finish();
         });
 
         Button buttonCancel=this.findViewById(R.id.button_cancel);
-        buttonCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        buttonCancel.setOnClickListener(view -> {
                 EditBookActivity.this.finish();
-            }
         });
     }
 }

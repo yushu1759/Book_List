@@ -1,10 +1,8 @@
-package com.jnu.booklist;
+package com.jnu.booklist.data;
 
-public class BookItem {
+import java.io.Serializable;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+public class BookItem implements Serializable {
 
     private String name;
     private int pictureId;
@@ -20,4 +18,11 @@ public class BookItem {
         return pictureId;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPictureId(int pictureId) {
+        this.pictureId = pictureId;
+    }
 }
