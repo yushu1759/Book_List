@@ -65,7 +65,7 @@ public class BookListMainActivity extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
-            return 2;
+            return 3;
         }
     }
 }
