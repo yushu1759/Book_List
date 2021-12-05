@@ -57,8 +57,10 @@ public class BookListMainActivity extends AppCompatActivity {
             {
                 case 0:
                     return BookListFragment.newInstance();
-                default:
+                case 1:
                     return WebViewFragment.newInstance();
+                default:
+                    return MapFragment.newInstance();
 
             }
         }

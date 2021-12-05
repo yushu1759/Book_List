@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,8 +43,14 @@ public class WebViewFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_web_view, container, false);
         WebView webView=rootView.findViewById(R.id.webview_content);
-        webView.loadUrl("www.baidu.com");
+        webView.setWebViewClient(new WebViewClient(){
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return super.shouldOverrideUrlLoading(view,url);
+            }
+        });
         WebSettings webSettings=webView.getSettings();
+        webView.loadUrl("http://news.sina.cn");
         webSettings.setJavaScriptEnabled(true);
         return rootView;
     }
