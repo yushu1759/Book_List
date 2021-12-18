@@ -68,6 +68,7 @@ public class MapFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View rootView = inflater.inflate(R.layout.fragment_map, container, false);
         mapView = rootView.findViewById(R.id.baidu_map_view);
 
@@ -90,15 +91,16 @@ public class MapFragment extends Fragment {
                     if(null!=content) {
                             try {
                                 JSONObject jsonObject = new JSONObject(content);
-                                JSONArray books = jsonObject.getJSONArray("books");
-                                for (int index = 0; index < books.length(); index++) {
-                                    JSONObject book = books.getJSONObject(index);
+                                JSONArray shops = jsonObject.getJSONArray("shops");
+                                for (int index = 0; index < shops.length(); index++)
+                                {
+                                    JSONObject shop = shops.getJSONObject(index);
 
-                                    LatLng centerPoint = new LatLng(book.getDouble("latitude"), book.getDouble("longitude"));
+                                    LatLng centerPoint = new LatLng(shop.getDouble("latitude"), shop.getDouble("longitude"));
                                     MarkerOptions markerOption = new MarkerOptions().icon(bitmap).position(centerPoint);
                                     Marker marker = (Marker) mapView.getMap().addOverlay(markerOption);
                                     OverlayOptions textOption = new TextOptions().bgColor(0xAAFFFF00).fontSize(50)
-                                            .fontColor(0xFFFF00FF).text(book.getString("name")).rotate(0).position(centerPoint);
+                                            .fontColor(0xFFFF00FF).text(shop.getString("name")).rotate(0).position(centerPoint);
                                     mapView.getMap().addOverlay(textOption);
                                 }
                             } catch (JSONException e) {
@@ -168,6 +170,5 @@ public class MapFragment extends Fragment {
         super.onDestroy();
         mapView.onDestroy();
     }
-
 
 }
