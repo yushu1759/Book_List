@@ -116,37 +116,34 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                         }
 
                     }
-                    for(int index=0;index<spriters.size();index++)
-                    {
+                    for (int index = 0; index < spriters.size(); index++) {
                         spriters.get(index).move();
                     }
-                    for(int index=0;index<spriters.size();index++)
-                    {
+                    for (int index = 0; index < spriters.size(); index++) {
                         spriters.get(index).draw(canvas);
                     }
-                    GameView.this.isTouched=false;
-                    Paint paint=new Paint();
+                    GameView.this.isTouched = false;
+                    Paint paint = new Paint();
                     paint.setTextSize(100);
                     paint.setColor(Color.GREEN);
-                    canvas.drawText("hit "+hitCount,100,100,paint);
+                    canvas.drawText("hit " + hitCount, 100, 100, paint);
 
-                }catch (Exception e){
+                } catch (Exception e) {
 
-                }finally {
-                    if(null != canvas){
+                } finally {
+                    if (null != canvas) {
                         surfaceHolder.unlockCanvasAndPost(canvas);
                     }
                 }
-                try{
+                try {
                     Thread.sleep(20);
-                }catch (InterruptedException e){
+                } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
 
             }
 
         }
-
 
     }
 }

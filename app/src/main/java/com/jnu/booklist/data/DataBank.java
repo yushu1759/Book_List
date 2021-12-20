@@ -13,7 +13,7 @@ import java.util.List;
 public class DataBank {
     public static final String DATA_FILE_NAME = "data";
     private final Context context;
-    List<BookItem> bookItemList;
+    List<BookItem> bookItemList = new ArrayList<>();
 
     public DataBank(Context context) {
         this.context=context;
